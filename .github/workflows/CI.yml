@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@1.1.0
+
+    - uses: actions/checkout@v1
+    - name: Run test
+      run: yarn test
