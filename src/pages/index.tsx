@@ -1,6 +1,6 @@
 import React from "react"
 
-const Index = () => {
+const Index: React.FC = () => {
   return <div>Hello World</div>
 }
 
