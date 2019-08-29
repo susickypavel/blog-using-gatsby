@@ -10,8 +10,8 @@
     "serve:network": "gatsby serve --open --host 0.0.0.0",
     "gatsby:info": "gatsby info --clipboard",
     "gatsby:clean": "gatsby clean",
-    "test": "echo TODO TEST",
-    "test:watch": "echo TODO TEST:WATCH",
+    "test": "jest --rootDir --config test/jest.config.js",
+    "test:watch": "jest --watch --rootDir --config test/jest.config.js",
     "test:lint": "echo TODO LINT TOOL",
     "test:tsc": "echo TODO TYPE TEST"
   },
@@ -26,9 +26,14 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^9.1.3",
+    "@types/jest": "^24.0.18",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
-    "babel-preset-gatsby": "^0.2.11"
+    "babel-preset-gatsby": "^0.2.11",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.6.2"
   }
 }
