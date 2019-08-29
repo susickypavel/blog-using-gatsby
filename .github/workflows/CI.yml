@@ -17,3 +17,6 @@ jobs:
 
       - name: Run test
         run: yarn test
+
+      - name: Run type test
+        run: yarn test:tsc

@@ -13,7 +13,7 @@
     "test": "jest --rootDir --config test/jest.config.js",
     "test:watch": "jest --watch --rootDir --config test/jest.config.js",
     "test:lint": "echo TODO LINT TOOL",
-    "test:tsc": "echo TODO TYPE TEST"
+    "test:tsc": "tsc"
   },
   "main": "index.js",
   "repository": "git@github.com:Thesoreon/blog-using-gatsby.git",
