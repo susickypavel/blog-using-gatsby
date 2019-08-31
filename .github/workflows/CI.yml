@@ -20,3 +20,6 @@ jobs:
 
       - name: Run type test
         run: yarn test:tsc
+
+      - name: Run lint test
+        run: yarn test:lint
