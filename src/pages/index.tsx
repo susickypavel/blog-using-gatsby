@@ -1,10 +1,12 @@
 import React from "react"
 
+import PageLayout from "@components/PageLayout"
+
 const Index: React.FC = () => {
   return (
-    <div>
+    <PageLayout>
       <h1>Hello World</h1>
-    </div>
+    </PageLayout>
   )
 }
 
