@@ -13,7 +13,8 @@
     "test": "jest --rootDir --config test/jest.config.js",
     "test:watch": "jest --watch --rootDir --config test/jest.config.js",
     "test:lint": "eslint --ignore-path .gitignore .",
-    "test:tsc": "tsc"
+    "test:tsc": "tsc",
+    "typegen": "graphql-codegen --config codegen.yml"
   },
   "main": "index.js",
   "repository": "git@github.com:Thesoreon/blog-using-gatsby.git",
@@ -26,6 +27,9 @@
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.7.0",
+    "@graphql-codegen/typescript": "1.7.0",
+    "@graphql-codegen/typescript-operations": "1.7.0",
     "@testing-library/react": "^9.1.3",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.2",
