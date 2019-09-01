@@ -1,7 +1,18 @@
 import React, { Fragment } from "react"
 
-const PageLayout: React.FC = ({ children }) => {
-  return <Fragment>{children}</Fragment>
+import Seo from "./Seo"
+
+interface Props {
+  title?: string
+}
+
+const PageLayout: React.FC<Props> = ({ children, title = "Home" }) => {
+  return (
+    <Fragment>
+      <Seo title={title} />
+      {children}
+    </Fragment>
+  )
 }
 
 export default PageLayout

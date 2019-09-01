@@ -171,6 +171,7 @@ export type QuerySiteArgs = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
+  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
@@ -192,6 +193,7 @@ export type Site = Node & {
   parent?: Maybe<Node>,
   children: Array<Node>,
   internal: Internal,
+  siteMetadata?: Maybe<SiteSiteMetadata>,
   port?: Maybe<Scalars['Int']>,
   host?: Maybe<Scalars['String']>,
   polyfill?: Maybe<Scalars['Boolean']>,
@@ -323,6 +325,8 @@ export enum SiteFieldsEnum {
   InternalMediaType = 'internal___mediaType',
   InternalOwner = 'internal___owner',
   InternalType = 'internal___type',
+  SiteMetadataDescription = 'siteMetadata___description',
+  SiteMetadataTwitter = 'siteMetadata___twitter',
   Port = 'port',
   Host = 'host',
   Polyfill = 'polyfill',
@@ -335,6 +339,7 @@ export type SiteFilterInput = {
   parent?: Maybe<NodeFilterInput>,
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
+  siteMetadata?: Maybe<SiteSiteMetadataFilterInput>,
   port?: Maybe<IntQueryOperatorInput>,
   host?: Maybe<StringQueryOperatorInput>,
   polyfill?: Maybe<BooleanQueryOperatorInput>,
@@ -850,6 +855,17 @@ export type SitePluginPluginOptionsFilterInput = {
 export type SitePluginSortInput = {
   fields?: Maybe<Array<Maybe<SitePluginFieldsEnum>>>,
   order?: Maybe<Array<Maybe<SortOrderEnum>>>,
+};
+
+export type SiteSiteMetadata = {
+   __typename?: 'SiteSiteMetadata',
+  description?: Maybe<Scalars['String']>,
+  twitter?: Maybe<Scalars['String']>,
+};
+
+export type SiteSiteMetadataFilterInput = {
+  description?: Maybe<StringQueryOperatorInput>,
+  twitter?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
