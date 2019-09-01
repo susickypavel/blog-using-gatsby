@@ -6,7 +6,7 @@ interface Props {
   title?: string
 }
 
-const PageLayout: React.FC<Props> = ({ children, title = "Home" }) => {
+const PageLayout: React.FC<Props> = ({ children, title = "Blog" }) => {
   return (
     <Fragment>
       <Seo title={title} />

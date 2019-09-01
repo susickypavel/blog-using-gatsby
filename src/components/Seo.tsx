@@ -29,9 +29,12 @@ const Seo: React.FC<Props> = ({ title }) => {
       <title>{title}</title>
       <meta name="description" content={description} />
 
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <meta property="og:image" content={`${process.env.SITE_URL}/seo-temp.png`} />
 
-      {/* <meta name="twitter:image" content={`${process.env.BASE_URL}StrangerThings.jpg`} /> TODO */}
+      <meta name="twitter:image" content={`${process.env.SITE_URL}/seo-temp.png`} />
       <meta name="twitter:creator" content={twitter} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
