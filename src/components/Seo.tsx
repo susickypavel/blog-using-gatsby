@@ -6,9 +6,19 @@ import { Query } from "@generated/graphql.d"
 
 interface Props {
   title: string
+  customMetadata?: Partial<CustomMetaData>
 }
 
-const Seo: React.FC<Props> = ({ title }) => {
+interface CustomMetaData {
+  customTitle: string
+  customDescription: string
+  customType: "website" | "article"
+}
+
+const Seo: React.FC<Props> = ({
+  title,
+  customMetadata: { customTitle, customDescription, customType = "website" } = {} as CustomMetaData
+}) => {
   const {
     site: {
       siteMetadata: { description, twitter }
@@ -26,18 +36,18 @@ const Seo: React.FC<Props> = ({ title }) => {
 
   return (
     <Head titleTemplate="%s | Paul from Czech" htmlAttributes={{ lang: "en" }}>
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{customTitle || title}</title>
+      <meta name="description" content={customDescription || description} />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:type" content={customType} />
+      <meta property="og:title" content={customTitle || title} />
+      <meta property="og:description" content={customDescription || description} />
       <meta property="og:image" content={`${process.env.SITE_URL}/seo-temp.png`} />
 
       <meta name="twitter:image" content={`${process.env.SITE_URL}/seo-temp.png`} />
       <meta name="twitter:creator" content={twitter} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={customTitle || title} />
+      <meta name="twitter:description" content={customDescription || description} />
     </Head>
   )
 }
