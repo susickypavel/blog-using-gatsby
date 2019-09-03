@@ -13,7 +13,7 @@ jobs:
         uses: Borales/actions-yarn@master
 
       - name: Run Unit tests
-        uses: yarn test
+        run: yarn test
 
       - name: Run Type test
         run: yarn test:tsc
