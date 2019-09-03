@@ -1,12 +1,9 @@
 name: Test nad lint source code
 
-on:
-  push:
-    branches:
-      - "!production"
+on: [push]
 
 jobs:
-  test-and-deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
