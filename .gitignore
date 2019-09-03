@@ -2,3 +2,7 @@
 node_modules
 public
 .cache
+
+# IDE's and Editors
+.vscode
+.idea
