@@ -9,6 +9,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
+      - name: Run Curl installation
+        uses: actions/bin/curl@master
+
       - name: Run Yarn installation
         uses: Borales/actions-yarn@master
 
@@ -25,7 +28,4 @@ jobs:
         run: yarn test:lint
 
       - name: Deploy to Netlify
-        uses: netlify/actions/build@master
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+        run: curl -X POST -d {} ${{ secrets.PRODUCTION_BUILD_HOOK }}
