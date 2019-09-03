@@ -1,0 +1,34 @@
+name: Test and deploy to production
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: Run Curl installation
+        uses: wei/curl@master
+
+      - name: Run Yarn installation
+        uses: Borales/actions-yarn@master
+
+      - name: Run Dependency installation
+        run: yarn
+
+      - name: Run Unit tests
+        run: yarn test
+
+      - name: Run Type test
+        run: yarn test:tsc
+
+      - name: Run Lint test
+        run: yarn test:lint
+
+      - name: Deploy to Netlify
+        run: curl -X POST -d {} ${{ secrets.PRODUCTION_BUILD_HOOK }}
