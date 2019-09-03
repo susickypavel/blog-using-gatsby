@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Run Curl installation
-        uses: actions/bin/curl@master
+        uses: wei/curl@master
 
       - name: Run Yarn installation
         uses: Borales/actions-yarn@master
