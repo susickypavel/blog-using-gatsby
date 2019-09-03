@@ -12,6 +12,9 @@ jobs:
       - name: Add Yarn for Github actions
         uses: Borales/actions-yarn@master
 
+      - name: Run dependency installation
+        uses: yarn
+
       - name: Run Unit tests
         run: yarn test
 
