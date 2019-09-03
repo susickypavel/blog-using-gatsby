@@ -3,7 +3,7 @@ name: Test nad lint source code
 on:
   push:
     branches:
-      - !production
+      - "!production"
 
 jobs:
   test-and-deploy:
