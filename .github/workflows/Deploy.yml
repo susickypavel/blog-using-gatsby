@@ -1,0 +1,28 @@
+name: Test and deploy to production
+
+on: [push]
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: Add Yarn for Github actions
+        uses: Borales/actions-yarn@master
+
+      - name: Run Unit tests
+        uses: yarn test
+
+      - name: Run Type test
+        run: yarn test:tsc
+
+      - name: Run Lint test
+        run: yarn test:lint
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/build@master
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
