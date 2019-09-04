@@ -1,0 +1,28 @@
+name: Test and lint source code
+
+on:
+  push:
+    branches:
+      - "!production"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: Run Yarn installation
+        uses: Borales/actions-yarn@master
+
+      - name: Run Dependency installation
+        run: yarn
+
+      - name: Run Unit tests
+        run: yarn test
+
+      - name: Run Type test
+        run: yarn test:tsc
+
+      - name: Run Lint test
+        run: yarn test:lint
