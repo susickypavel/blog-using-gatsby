@@ -41,6 +41,7 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-helmet": "^5.0.9",
+    "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "babel-plugin-module-resolver": "^3.2.0",
@@ -49,9 +50,12 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "gatsby-plugin-emotion": "^4.1.5",
+    "gatsby-plugin-typography": "^2.3.6",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
+    "react-typography": "^0.16.19",
     "ts-jest": "^24.0.2",
-    "typescript": "^3.6.2"
+    "typescript": "^3.6.2",
+    "typography": "^0.16.19"
   }
 }
