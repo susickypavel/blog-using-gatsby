@@ -14,4 +14,8 @@ export default css`
   #___gatsby {
     height: 100%;
   }
+
+  .navigation-bar-active-link {
+    color: red !important;
+  }
 `
