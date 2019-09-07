@@ -15,8 +15,8 @@ const NavigationBar: React.FC = () => {
   ]
 
   return (
-    <NavigationHolder>
-      <NavigationBarItemsHolder>
+    <NavigationHolder navigationItemsCount={links.length}>
+      <NavigationBarItemsHolder navigationItemsCount={links.length}>
         <Splitter />
         {links.map(link => (
           <NavigationBarItem key={link.name} link={link} />

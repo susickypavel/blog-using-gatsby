@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 
 import { IconType } from "react-icons/lib/cjs"
-import { NAVIGATIONBARITEM_ICON_SIZE } from "@css/constants"
+import { NAVIGATIONBARITEM_ICON_SIZE, NAVIGATIONBARITEM_WIDTH } from "@css/constants"
 
 interface Props {
   link: NavigationLinkProps
@@ -27,6 +27,8 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+
+  width: ${NAVIGATIONBARITEM_WIDTH}px;
 `
 
 const LinkName = styled.span`
