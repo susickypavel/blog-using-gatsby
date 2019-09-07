@@ -6,10 +6,12 @@ import NavigationBarItemsHolder from "./navigation-bar-items-holder"
 
 import Splitter from "@components/Splitter"
 
+import { FiHome, FiUser } from "react-icons/fi"
+
 const NavigationBar: React.FC = () => {
   const links: NavigationLinkProps[] = [
-    { name: "home", path: "/" },
-    { name: "about", path: "/about" }
+    { name: "home", path: "/", Icon: FiHome },
+    { name: "about", path: "/about", Icon: FiUser }
   ]
 
   return (
