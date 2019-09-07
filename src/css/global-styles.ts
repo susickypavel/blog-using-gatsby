@@ -1,7 +1,5 @@
 import { css } from "@emotion/core"
 
-import { PRIMARY_COLOR } from "./constants"
-
 export default css`
   * {
     box-sizing: border-box;
@@ -17,8 +15,7 @@ export default css`
     height: 100%;
   }
 
-  #___gatsby {
-    background-color: ${PRIMARY_COLOR};
-    color: #fff;
+  .navigation-bar-active-link {
+    color: red !important;
   }
 `
