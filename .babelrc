@@ -10,7 +10,8 @@
           "@css": "./src/css/",
           "@utils": "./src/utils/",
           "@services": "./src/services/",
-          "@hooks": "./src/hooks/"
+          "@hooks": "./src/hooks/",
+          "@static": "./static/"
         }
       }
     ]

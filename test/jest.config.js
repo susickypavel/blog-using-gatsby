@@ -14,7 +14,8 @@ module.exports = {
     "@css(.*)$": "<rootDir>/src/css$1",
     "@utils(.*)$": "<rootDir>/src/utils$1",
     "@services(.*)$": "<rootDir>/src/services$1",
-    "@hooks(.*)$": "<rootDir>/src/hooks$1"
+    "@hooks(.*)$": "<rootDir>/src/hooks$1",
+    "@static(.*)$": "<rootDir>/static$1"
   },
   globals: {
     __PATH_PREFIX__: ``
