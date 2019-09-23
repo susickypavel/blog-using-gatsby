@@ -19,7 +19,8 @@
       "@css/*": ["css/*"],
       "@utils/*": ["utils/*"],
       "@services/*": ["services/*"],
-      "@hooks/*": ["hooks/*"]
+      "@hooks/*": ["hooks/*"],
+      "@static/*": ["../static/*"]
     }
   },
   "include": ["src/**/*", "index.d.ts"]
