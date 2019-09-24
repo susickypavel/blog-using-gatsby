@@ -1,6 +1,6 @@
 import { css } from "@emotion/core"
 
-import { PRIMARY_COLOR, LAYOUT_MEDIA_QUERY_BP } from "./constants"
+import { LAYOUT_MEDIA_QUERY_BP } from "./constants"
 
 export default css`
   * {
@@ -20,7 +20,6 @@ export default css`
   }
 
   #___gatsby {
-    background-color: ${PRIMARY_COLOR};
     color: #fff;
   }
 
