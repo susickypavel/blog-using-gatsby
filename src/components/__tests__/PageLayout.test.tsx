@@ -9,6 +9,6 @@ describe("PageLayout component", () => {
   test("should render children of PageLayout component", () => {
     const { container } = render(<PageLayout>Hello World</PageLayout>)
 
-    expect(container.textContent).toBe("Hello World")
+    expect(container.textContent).toContain("Hello World")
   })
 })
