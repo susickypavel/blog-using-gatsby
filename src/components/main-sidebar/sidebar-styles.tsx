@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@utils/styled"
 
 import {
   LAYOUT_MEDIA_QUERY_BP,
@@ -9,6 +9,9 @@ import {
 
 export const SidebarWrapper = styled.div`
   flex: 1 0 39%;
+  background: ${props => props.theme.bg.secondary};
+  color: ${props => props.theme.color.primary};
+  border-left: 1px solid black;
 
   padding: ${SIDEBAR_PADDING};
 
@@ -18,6 +21,7 @@ export const SidebarWrapper = styled.div`
 
   @media screen and (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
     flex: 1 0;
+    border-left: none;
   }
 `
 
