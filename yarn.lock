@@ -8187,6 +8187,11 @@ md5@^2.2.1:
     crypt "~0.0.1"
     is-buffer "~1.1.1"
 
+mdi-react@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/mdi-react/-/mdi-react-6.1.0.tgz#eb53447dff0aef899d95fb951f00216ec6b2c63f"
+  integrity sha512-k/Tu204ok5ouabcrC8/9CaekseMQ+CAhHCVi7Wr9Au5qW9UkxkW/TNSKEpDImEQ2nOAXieQTawYkddNlNfxE9w==
+
 mdn-data@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/mdn-data/-/mdn-data-2.0.4.tgz#699b3c38ac6f1d728091a64650b65d388502fd5b"
