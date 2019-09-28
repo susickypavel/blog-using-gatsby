@@ -20,7 +20,7 @@ export const SidebarWrapper = styled.div`
   align-items: center;
 
   @media screen and (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
-    flex: 1 0;
+    flex-grow: 0;
     border-left: none;
   }
 `
@@ -36,4 +36,9 @@ export const SidebarTitle = styled.p`
   font-size: ${SIDEBAR_TITLE_FONTSIZE};
   font-weight: bold;
   margin-top: ${SIDEBAR_TITLE_MARGINTOP};
+`
+
+export const SidebarHeaderHolder = styled.div`
+  width: 100%;
+  text-align: center;
 `
