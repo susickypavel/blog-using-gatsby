@@ -29,4 +29,8 @@ export default css`
       flex-flow: column-reverse;
     }
   }
+
+  .activeLink {
+    font-weight: bold;
+  }
 `
