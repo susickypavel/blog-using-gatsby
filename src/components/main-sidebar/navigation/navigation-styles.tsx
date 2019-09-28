@@ -8,7 +8,7 @@ export const NavigationWrapper = styled.nav`
   justify-content: center;
 
   & ul {
-    margin: 16px 0;
+    margin: 32px 0;
   }
 `
 
