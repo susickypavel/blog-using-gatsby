@@ -2,6 +2,7 @@ import React from "react"
 
 import BlogPostPreview from "./blog-post-preview"
 import { MdxEdge } from "@generated/graphql"
+import { BlogPostListTitle } from "./blog-styles"
 
 interface Props {
   edges: MdxEdge[]
@@ -10,8 +11,9 @@ interface Props {
 const BlogPostsList: React.FC<Props> = ({ edges }) => {
   return (
     <div>
-      {edges.map(({ node: { frontmatter, fields: { slug } } }) => (
-        <BlogPostPreview frontmatter={frontmatter} slug={slug} key={frontmatter.title} />
+      <BlogPostListTitle>ARTICLES [{edges.length}]</BlogPostListTitle>
+      {edges.map(({ node }) => (
+        <BlogPostPreview node={node} key={node.id} />
       ))}
     </div>
   )

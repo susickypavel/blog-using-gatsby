@@ -1,20 +1,23 @@
 import React from "react"
 
-import { MdxFrontmatter } from "@generated/graphql"
-import { Link } from "gatsby"
+import { Mdx } from "@generated/graphql"
+
+import { BlogPostPreviewWrapper } from "./blog-styles"
 
 interface Props {
-  frontmatter: MdxFrontmatter
-  slug: string
+  node: Mdx
 }
 
-const BlogPostPreview: React.FC<Props> = ({ frontmatter: { title, date }, slug }) => {
+const BlogPostPreview: React.FC<Props> = ({
+  node: {
+    frontmatter: { title },
+    fields: { slug }
+  }
+}) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <time>{date}</time>
-      <Link to={slug}>Read more...</Link>
-    </div>
+    <BlogPostPreviewWrapper to={slug}>
+      <h3>{title}</h3>
+    </BlogPostPreviewWrapper>
   )
 }
 
