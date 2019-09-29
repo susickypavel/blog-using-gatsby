@@ -8,6 +8,21 @@ module.exports = {
       options: {
         pathToConfigModule: "src/utils/typography"
       }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: "blog"
+      }
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          blog: require.resolve("./src/components/PageLayout.tsx")
+        }
+      }
     }
   ],
   siteMetadata: {
