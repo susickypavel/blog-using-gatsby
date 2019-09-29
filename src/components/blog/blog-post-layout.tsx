@@ -8,7 +8,7 @@ import PageLayout from "@components/PageLayout"
 
 const PageTemplate: React.FC<any> = ({ data: { mdx } }) => {
   return (
-    <PageLayout>
+    <PageLayout title={mdx.frontmatter.title}>
       <h1>{mdx.frontmatter.title}</h1>
       <MDXRenderer>{mdx.body}</MDXRenderer>
     </PageLayout>
