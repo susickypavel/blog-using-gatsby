@@ -33,3 +33,8 @@ export const BlogPostPreviewWrapper = styled(Link)`
     text-decoration: underline;
   }
 `
+
+export const BlogContentHolder = styled.div`
+  padding: 16px;
+  font-size: 2rem;
+`
