@@ -5,12 +5,15 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import PageLayout from "@components/PageLayout"
+import { BlogPostListTitle, BlogContentHolder } from "./blog-styles"
 
 const PageTemplate: React.FC<any> = ({ data: { mdx } }) => {
   return (
     <PageLayout title={mdx.frontmatter.title}>
-      <h1>{mdx.frontmatter.title}</h1>
-      <MDXRenderer>{mdx.body}</MDXRenderer>
+      <BlogPostListTitle>{mdx.frontmatter.title}</BlogPostListTitle>
+      <BlogContentHolder>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </BlogContentHolder>
     </PageLayout>
   )
 }
