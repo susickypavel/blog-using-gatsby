@@ -17,3 +17,9 @@ export const THEMETOGGLE_SLIDER_BG = "gray"
 /** SOCIAL MEDIA LINKS */
 export const SOCIALMEDIALINKS_SIZE = 50
 export const SOCIALMEDIALINKS_HOVER_AND_FOCUS_OPACITY = "0.7"
+
+/** MDX COMPONENTS */
+export const BLOCKQUOTE_FONTSIZE = "1.6rem"
+export const BLOCKQUOTE_PADDING = "16px"
+export const BLOCKQUOTE_MARGIN = "16px 0"
+export const BLOCKQUOTE_BORDERRADIUS = "4px"
