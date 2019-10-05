@@ -23,3 +23,7 @@ export const BLOCKQUOTE_FONTSIZE = "1.6rem"
 export const BLOCKQUOTE_PADDING = "16px"
 export const BLOCKQUOTE_MARGIN = "16px 0"
 export const BLOCKQUOTE_BORDERRADIUS = "4px"
+
+/** BLOG */
+export const BLOG_HOLDER_PADDING = "32px"
+export const BLOG_HOLDER_PADDING_SMALL = "16px"
