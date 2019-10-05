@@ -19,9 +19,26 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        extensions: [".mdx", ".md"],
         defaultLayouts: {
           blog: require.resolve("./src/components/PageLayout.tsx")
-        }
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {
+                react: "javascript"
+              },
+              prompt: {
+                global: true
+              }
+            }
+          }
+        ]
       }
     }
   ],
