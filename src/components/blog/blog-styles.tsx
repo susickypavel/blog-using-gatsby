@@ -1,5 +1,10 @@
 import styled from "@utils/styled"
 import { Link } from "gatsby"
+import {
+  LAYOUT_MEDIA_QUERY_BP,
+  BLOG_HOLDER_PADDING,
+  BLOG_HOLDER_PADDING_SMALL
+} from "@css/constants"
 
 export const BlogPostListTitle = styled.h2`
   text-align: center;
@@ -35,6 +40,15 @@ export const BlogPostPreviewWrapper = styled(Link)`
 `
 
 export const BlogContentHolder = styled.div`
-  padding: 16px;
+  padding: ${BLOG_HOLDER_PADDING};
+  padding-top: 0 !important;
   font-size: 2rem;
+
+  @media only screen and (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
+    padding: ${BLOG_HOLDER_PADDING_SMALL};
+  }
+
+  & *:first-of-type {
+    margin-top: 0 !important;
+  }
 `
