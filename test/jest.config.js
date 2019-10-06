@@ -11,7 +11,6 @@ module.exports = {
   testPathIgnorePatterns: ["node_modules", ".cache", "public"],
   moduleNameMapper: {
     "@components(.*)$": "<rootDir>/src/components$1",
-    "@generated(.*)$": "<rootDir>/src/generated$1",
     "@css(.*)$": "<rootDir>/src/css$1",
     "@utils(.*)$": "<rootDir>/src/utils$1",
     "@services(.*)$": "<rootDir>/src/services$1",
