@@ -8,6 +8,7 @@ export type Theme = {
   color: {
     primary: string
     secondary: string
+    links: string
   }
 }
 
