@@ -10,7 +10,8 @@ const SiteThemeProvider: React.FC = ({ children }) => {
   const theme: Theme = {
     color: {
       primary: darkTheme ? "rgb(153,178,204)" : "rgb(51,102,153)",
-      secondary: darkTheme ? "#fff" : "#000"
+      secondary: darkTheme ? "#fff" : "#000",
+      links: darkTheme ? "#7c43bd" : "#4a148c"
     },
     bg: {
       primary: darkTheme ? "#343434" : "#fff",

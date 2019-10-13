@@ -48,7 +48,11 @@ export const BlogContentHolder = styled.div`
     padding: ${BLOG_HOLDER_PADDING_SMALL};
   }
 
-  & *:first-of-type {
+  & *:first-child {
     margin-top: 0 !important;
+  }
+
+  & a {
+    color: ${props => props.theme.color.links};
   }
 `
