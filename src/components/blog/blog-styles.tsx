@@ -12,6 +12,10 @@ export const BlogPostListTitle = styled.h2`
   /* border-bottom: 1px solid red; */
 
   font-size: 3.2rem;
+
+  @media (max-width: 425px) {
+    font-size: 1.6rem;
+  }
 `
 
 export const BlogPostPreviewWrapper = styled(Link)`
@@ -54,5 +58,9 @@ export const BlogContentHolder = styled.div`
 
   & a {
     color: ${props => props.theme.color.links};
+  }
+
+  @media (max-width: 425px) {
+    font-size: 1.6rem;
   }
 `

@@ -50,6 +50,10 @@ export const Heading: React.FC<{
   const HeadingComponent = styled(heading)`
     font-size: ${fontSize}rem;
     margin: 32px 0;
+
+    @media (max-width: 425px) {
+      font-size: calc(${fontSize}rem / 1.5);
+    }
   `
 
   return <HeadingComponent>{children}</HeadingComponent>
