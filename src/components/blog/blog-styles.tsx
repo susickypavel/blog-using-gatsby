@@ -13,6 +13,10 @@ export const BlogPostListTitle = styled.h2`
 
   font-size: 3.2rem;
 
+  @media (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
+    padding: 16px;
+  }
+
   @media (max-width: 425px) {
     font-size: 1.6rem;
   }
@@ -41,6 +45,32 @@ export const BlogPostPreviewWrapper = styled(Link)`
   &:hover {
     text-decoration: underline;
   }
+`
+
+export const TagsHolder = styled.div`
+  text-align: left;
+  margin: 0px 24px 24px 24px;
+
+  @media (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
+    margin: 0 16px 16px 16px;
+  }
+`
+// TODO: Extract to constants
+export const TagWrapper = styled.div<{
+  colors: {
+    background: string
+    foreground: string
+  }
+}>`
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 4px rgba(0, 0, 0, 0.25);
+  background-color: ${props => props.colors.background};
+  color: ${props => props.colors.foreground};
+  display: inline-block;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 3px;
+  font-size: 1.4rem;
+  font-weight: bold;
 `
 
 export const BlogContentHolder = styled.div`

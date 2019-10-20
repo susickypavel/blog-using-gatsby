@@ -5,12 +5,21 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import PageLayout from "@components/PageLayout"
-import { BlogPostListTitle, BlogContentHolder } from "./blog-styles"
+
+import { BlogPostListTitle, BlogContentHolder, TagsHolder } from "./blog-styles"
+import Tag from "./tag"
 
 const PageTemplate: React.FC<any> = ({ data: { mdx } }) => {
   return (
     <PageLayout title={mdx.frontmatter.title}>
       <BlogPostListTitle>{mdx.frontmatter.title}</BlogPostListTitle>
+      {mdx.frontmatter.tags && (
+        <TagsHolder>
+          {mdx.frontmatter.tags.map((tag: string) => (
+            <Tag name={tag} key={tag} />
+          ))}
+        </TagsHolder>
+      )}
       <BlogContentHolder>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </BlogContentHolder>
@@ -25,6 +34,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
+        tags
       }
     }
   }
