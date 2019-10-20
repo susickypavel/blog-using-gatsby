@@ -73,7 +73,7 @@ export type Directory = Node & {
   gid?: Maybe<Scalars['Int']>,
   rdev?: Maybe<Scalars['Int']>,
   blksize?: Maybe<Scalars['Int']>,
-  ino?: Maybe<Scalars['Int']>,
+  ino?: Maybe<Scalars['Float']>,
   blocks?: Maybe<Scalars['Int']>,
   atimeMs?: Maybe<Scalars['Float']>,
   mtimeMs?: Maybe<Scalars['Float']>,
@@ -328,7 +328,7 @@ export type DirectoryFilterInput = {
   gid?: Maybe<IntQueryOperatorInput>,
   rdev?: Maybe<IntQueryOperatorInput>,
   blksize?: Maybe<IntQueryOperatorInput>,
-  ino?: Maybe<IntQueryOperatorInput>,
+  ino?: Maybe<FloatQueryOperatorInput>,
   blocks?: Maybe<IntQueryOperatorInput>,
   atimeMs?: Maybe<FloatQueryOperatorInput>,
   mtimeMs?: Maybe<FloatQueryOperatorInput>,
@@ -382,7 +382,7 @@ export type File = Node & {
   gid?: Maybe<Scalars['Int']>,
   rdev?: Maybe<Scalars['Int']>,
   blksize?: Maybe<Scalars['Int']>,
-  ino?: Maybe<Scalars['Int']>,
+  ino?: Maybe<Scalars['Float']>,
   blocks?: Maybe<Scalars['Int']>,
   atimeMs?: Maybe<Scalars['Float']>,
   mtimeMs?: Maybe<Scalars['Float']>,
@@ -609,6 +609,7 @@ export enum FileFieldsEnum {
   ChildMdxFileAbsolutePath = 'childMdx___fileAbsolutePath',
   ChildMdxFrontmatterTitle = 'childMdx___frontmatter___title',
   ChildMdxFrontmatterDate = 'childMdx___frontmatter___date',
+  ChildMdxFrontmatterTags = 'childMdx___frontmatter___tags',
   ChildMdxBody = 'childMdx___body',
   ChildMdxExcerpt = 'childMdx___excerpt',
   ChildMdxHeadings = 'childMdx___headings',
@@ -688,7 +689,7 @@ export type FileFilterInput = {
   gid?: Maybe<IntQueryOperatorInput>,
   rdev?: Maybe<IntQueryOperatorInput>,
   blksize?: Maybe<IntQueryOperatorInput>,
-  ino?: Maybe<IntQueryOperatorInput>,
+  ino?: Maybe<FloatQueryOperatorInput>,
   blocks?: Maybe<IntQueryOperatorInput>,
   atimeMs?: Maybe<FloatQueryOperatorInput>,
   mtimeMs?: Maybe<FloatQueryOperatorInput>,
@@ -857,6 +858,7 @@ export enum MdxFieldsEnum {
   FileAbsolutePath = 'fileAbsolutePath',
   FrontmatterTitle = 'frontmatter___title',
   FrontmatterDate = 'frontmatter___date',
+  FrontmatterTags = 'frontmatter___tags',
   Body = 'body',
   Excerpt = 'excerpt',
   Headings = 'headings',
@@ -984,20 +986,14 @@ export type MdxFilterInput = {
 export type MdxFrontmatter = {
    __typename?: 'MdxFrontmatter',
   title: Scalars['String'],
-  date?: Maybe<Scalars['Date']>,
-};
-
-
-export type MdxFrontmatterDateArgs = {
-  formatString?: Maybe<Scalars['String']>,
-  fromNow?: Maybe<Scalars['Boolean']>,
-  difference?: Maybe<Scalars['String']>,
-  locale?: Maybe<Scalars['String']>
+  date?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
-  date?: Maybe<DateQueryOperatorInput>,
+  date?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MdxGroupConnection = {
@@ -1115,7 +1111,7 @@ export type QueryFileArgs = {
   gid?: Maybe<IntQueryOperatorInput>,
   rdev?: Maybe<IntQueryOperatorInput>,
   blksize?: Maybe<IntQueryOperatorInput>,
-  ino?: Maybe<IntQueryOperatorInput>,
+  ino?: Maybe<FloatQueryOperatorInput>,
   blocks?: Maybe<IntQueryOperatorInput>,
   atimeMs?: Maybe<FloatQueryOperatorInput>,
   mtimeMs?: Maybe<FloatQueryOperatorInput>,
@@ -1268,7 +1264,7 @@ export type QueryDirectoryArgs = {
   gid?: Maybe<IntQueryOperatorInput>,
   rdev?: Maybe<IntQueryOperatorInput>,
   blksize?: Maybe<IntQueryOperatorInput>,
-  ino?: Maybe<IntQueryOperatorInput>,
+  ino?: Maybe<FloatQueryOperatorInput>,
   blocks?: Maybe<IntQueryOperatorInput>,
   atimeMs?: Maybe<FloatQueryOperatorInput>,
   mtimeMs?: Maybe<FloatQueryOperatorInput>,
@@ -1650,7 +1646,10 @@ export enum SitePageFieldsEnum {
   PluginCreatorPluginOptionsPathToConfigModule = 'pluginCreator___pluginOptions___pathToConfigModule',
   PluginCreatorPluginOptionsPath = 'pluginCreator___pluginOptions___path',
   PluginCreatorPluginOptionsName = 'pluginCreator___pluginOptions___name',
+  PluginCreatorPluginOptionsExtensions = 'pluginCreator___pluginOptions___extensions',
   PluginCreatorPluginOptionsDefaultLayoutsBlog = 'pluginCreator___pluginOptions___defaultLayouts___blog',
+  PluginCreatorPluginOptionsGatsbyRemarkPlugins = 'pluginCreator___pluginOptions___gatsbyRemarkPlugins',
+  PluginCreatorPluginOptionsGatsbyRemarkPluginsResolve = 'pluginCreator___pluginOptions___gatsbyRemarkPlugins___resolve',
   PluginCreatorPluginOptionsPathCheck = 'pluginCreator___pluginOptions___pathCheck',
   PluginCreatorNodeApIs = 'pluginCreator___nodeAPIs',
   PluginCreatorBrowserApIs = 'pluginCreator___browserAPIs',
@@ -1846,7 +1845,12 @@ export enum SitePluginFieldsEnum {
   PluginOptionsPathToConfigModule = 'pluginOptions___pathToConfigModule',
   PluginOptionsPath = 'pluginOptions___path',
   PluginOptionsName = 'pluginOptions___name',
+  PluginOptionsExtensions = 'pluginOptions___extensions',
   PluginOptionsDefaultLayoutsBlog = 'pluginOptions___defaultLayouts___blog',
+  PluginOptionsGatsbyRemarkPlugins = 'pluginOptions___gatsbyRemarkPlugins',
+  PluginOptionsGatsbyRemarkPluginsResolve = 'pluginOptions___gatsbyRemarkPlugins___resolve',
+  PluginOptionsGatsbyRemarkPluginsOptionsShowLineNumbers = 'pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers',
+  PluginOptionsGatsbyRemarkPluginsOptionsClassPrefix = 'pluginOptions___gatsbyRemarkPlugins___options___classPrefix',
   PluginOptionsPathCheck = 'pluginOptions___pathCheck',
   NodeApIs = 'nodeAPIs',
   BrowserApIs = 'browserAPIs',
@@ -1973,7 +1977,9 @@ export type SitePluginPluginOptions = {
   pathToConfigModule?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
+  extensions?: Maybe<Array<Maybe<Scalars['String']>>>,
   defaultLayouts?: Maybe<SitePluginPluginOptionsDefaultLayouts>,
+  gatsbyRemarkPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsGatsbyRemarkPlugins>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -1990,8 +1996,58 @@ export type SitePluginPluginOptionsFilterInput = {
   pathToConfigModule?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
+  extensions?: Maybe<StringQueryOperatorInput>,
   defaultLayouts?: Maybe<SitePluginPluginOptionsDefaultLayoutsFilterInput>,
+  gatsbyRemarkPlugins?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPlugins = {
+   __typename?: 'SitePluginPluginOptionsGatsbyRemarkPlugins',
+  resolve?: Maybe<Scalars['String']>,
+  options?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptions>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>,
+  options?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsFilterInput>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
+   __typename?: 'SitePluginPluginOptionsGatsbyRemarkPluginsOptions',
+  showLineNumbers?: Maybe<Scalars['Boolean']>,
+  classPrefix?: Maybe<Scalars['String']>,
+  aliases?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases>,
+  prompt?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases = {
+   __typename?: 'SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliases',
+  react?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliasesFilterInput = {
+  react?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>,
+  classPrefix?: Maybe<StringQueryOperatorInput>,
+  aliases?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsAliasesFilterInput>,
+  prompt?: Maybe<SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt = {
+   __typename?: 'SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPrompt',
+  global?: Maybe<Scalars['Boolean']>,
+};
+
+export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsPromptFilterInput = {
+  global?: Maybe<BooleanQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
