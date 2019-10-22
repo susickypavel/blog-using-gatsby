@@ -6,12 +6,13 @@ import { BlogPostListTitle } from "./blog-styles"
 
 interface Props {
   edges: MdxEdge[]
+  header?: boolean
 }
 
-const BlogPostsList: React.FC<Props> = ({ edges }) => {
+const BlogPostsList: React.FC<Props> = ({ edges, header = true }) => {
   return (
     <div>
-      <BlogPostListTitle>ARTICLES [{edges.length}]</BlogPostListTitle>
+      {header ? <BlogPostListTitle>ARTICLES [{edges.length}]</BlogPostListTitle> : null}
       {edges.map(({ node }) => (
         <BlogPostPreview node={node} key={node.id} />
       ))}
