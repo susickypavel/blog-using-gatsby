@@ -56,7 +56,7 @@ export const TagsHolder = styled.div`
   }
 `
 // TODO: Extract to constants
-export const TagWrapper = styled.div<{
+export const TagWrapper = styled(Link)<{
   colors: {
     background: string
     foreground: string
@@ -71,6 +71,7 @@ export const TagWrapper = styled.div<{
   margin: 3px;
   font-size: 1.4rem;
   font-weight: bold;
+  text-decoration: none;
 `
 
 export const BlogContentHolder = styled.div`
@@ -93,4 +94,20 @@ export const BlogContentHolder = styled.div`
   @media (max-width: 425px) {
     font-size: 1.6rem;
   }
+`
+
+export const BlogTagsPageTitle = styled.h1`
+  text-align: center;
+  margin: 16px 0;
+`
+
+export const BlogTagsGoBack = styled(Link)`
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+  color: ${props => props.theme.color.links};
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 16px;
 `
