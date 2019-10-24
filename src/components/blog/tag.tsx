@@ -15,7 +15,11 @@ const Tag: React.FC<Props> = ({ name }) => {
   }
 
   return (
-    <TagWrapper colors={colors[name] || { background: "gray", foreground: "white" }}>
+    <TagWrapper
+      to="/tags"
+      state={{ tag: name }}
+      colors={colors[name] || { background: "gray", foreground: "white" }}
+    >
       {name}
     </TagWrapper>
   )
