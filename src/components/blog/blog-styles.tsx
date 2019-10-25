@@ -5,13 +5,13 @@ import {
   BLOG_HOLDER_PADDING,
   BLOG_HOLDER_PADDING_SMALL
 } from "@css/constants"
+import { PageTitle } from "@css/global-styles"
 
-export const BlogPostListTitle = styled.h2`
-  text-align: center;
-  padding: 24px;
-  /* border-bottom: 1px solid red; */
-
+export const BlogPostTitle = styled(PageTitle)`
   font-size: 3.2rem;
+  text-align: center;
+
+  padding: 24px;
 
   @media (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
     padding: 16px;

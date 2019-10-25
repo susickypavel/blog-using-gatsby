@@ -1,6 +1,22 @@
+import styled from "@utils/styled"
 import { css } from "@emotion/core"
 
 import { LAYOUT_MEDIA_QUERY_BP } from "./constants"
+
+export const PageTitle = styled.h2`
+  font-size: 3.2rem;
+  text-align: center;
+
+  padding: 24px;
+
+  @media (max-width: ${LAYOUT_MEDIA_QUERY_BP}) {
+    padding: 16px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 2.8rem;
+  }
+`
 
 export default css`
   * {

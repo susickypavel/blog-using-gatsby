@@ -6,13 +6,13 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import PageLayout from "@components/PageLayout"
 
-import { BlogPostListTitle, BlogContentHolder, TagsHolder } from "./blog-styles"
+import { BlogPostTitle, BlogContentHolder, TagsHolder } from "./blog-styles"
 import Tag from "./tag"
 
 const PageTemplate: React.FC<any> = ({ data: { mdx } }) => {
   return (
     <PageLayout title={mdx.frontmatter.title}>
-      <BlogPostListTitle>{mdx.frontmatter.title}</BlogPostListTitle>
+      <BlogPostTitle>{mdx.frontmatter.title}</BlogPostTitle>
       {mdx.frontmatter.tags && (
         <TagsHolder>
           {mdx.frontmatter.tags.map((tag: string) => (
